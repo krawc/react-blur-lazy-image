@@ -78,7 +78,6 @@ export default App;
 
 ## Prop Types
 ```js
-
 propTypes: {
   /**
   * source of original image
