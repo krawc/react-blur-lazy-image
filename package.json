@@ -1,9 +1,16 @@
 {
   "name": "react-blur-lazy-image",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "lazy loading images in progressive way, loads image when its in user&#x27;s viewport",
   "author": "Rohit Sharma",
-  "license": "MIT",
+  "license": "WTFPL",
+  "keywords": [
+    "lazy loading",
+    "slider image loader",
+    "blur loader",
+    "blur image loader",
+    "inview image loader"
+  ],
   "repository": "git@github.com:rohit7209/react-blur-lazy-image.git",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
