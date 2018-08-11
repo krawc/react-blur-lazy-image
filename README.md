@@ -80,33 +80,33 @@ export default App;
 ```js
 propTypes: {
   /**
-  * source of original image
-  */
+   * source of original image
+   */
   src: PropTypes.string.isRequired,
   
   /**
-  * source of placeholder image
-  */
+   * source of placeholder image
+   */
   altSrc: PropTypes.string.isRequired,
 
   /**
-  * alt attrs for image
-  */
+   * alt attrs for image
+   */
   alt: PropTypes.string,
 
   /**
-  * style object for image
-  */
+   * style object for image
+   */
   style: PropTypes.object,
   
   /**
-  * class name for image
-  */
+   * class name for image
+   */
   className: PropTypes.string,
   
   /**
-  * attributes for <img> tag
-  */
+   * attributes for <img> tag
+   */
   htmlAttrs: PropTypes.object,
 };
 ```
