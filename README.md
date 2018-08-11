@@ -113,3 +113,6 @@ propTypes: {
 
 ## License
 **WTFPL** Do What the Fuck You Want To Public License
+
+## Author
+[Rohit Sharma](http://rohitsharma.xyz) | [rohit7209@rediffmail.com](mailto://rohit7209@rediffmail.com) | [rohitsharma.xyz](http://rohitsharma.xyz)
