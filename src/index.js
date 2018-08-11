@@ -11,12 +11,17 @@ class Image extends React.Component {
     }
     this.imageLoaded = this.imageLoaded.bind(this);
     this.isInViewport = this.isInViewport.bind(this);
-    this.verifyContainer = this.verifyContainer.bind(this);
+    this.getContainer = this.getContainer.bind(this);
   }
 
 
   componentDidMount() {
-    if (this.verifyContainer()) this.props.container.addEventListener('scroll', this.isInViewport, true);
+    this.container = this.getContainer();
+    if (this.container) this.container.addEventListener('scroll', this.isInViewport, true);
+  }
+
+  componentWillUnmount() {
+    if (this.container) this.container.removeListener('scroll');
   }
 
   imageLoaded() {
@@ -26,20 +31,30 @@ class Image extends React.Component {
   }
 
   isInViewport(offset = 0) {
-    if (this.verifyContainer() && this.altImage) {
-      const top = this.altImage.getBoundingClientRect().top - this.props.container.getBoundingClientRect().top;
-      const height = this.props.container.getBoundingClientRect().height;
-      const left = this.altImage.getBoundingClientRect().left - this.props.container.getBoundingClientRect().left;
-      const width = this.props.container.getBoundingClientRect().width;
+    if (this.container && this.altImage) {
+      let top, height, left, width;
+      if (this.container.self == this.container) {
+        top = this.altImage.getBoundingClientRect().top;
+        height = this.container.innerHeight;
+        left = this.altImage.getBoundingClientRect().left;
+        width = this.container.innerWidth;
+      } else {
+        top = this.altImage.getBoundingClientRect().top - this.container.getBoundingClientRect().top;
+        height = this.container.getBoundingClientRect().height;
+        left = this.altImage.getBoundingClientRect().left - this.container.getBoundingClientRect().left;
+        width = this.container.getBoundingClientRect().width;
+      }
+
       if (top <= height && left <= width) this.setState({
         loadImage: true,
       });
     }
   }
 
-  verifyContainer() {
-    if (this.props.container) return true;
-    else console.error('%c[Lazy-Image]', 'font-weight:bold;', '\'container\' is not defined! please add image list after mounting the parent component, see: http://rohitsharma.xyz');
+  getContainer() {
+    if (this.props.container) return this.props.container;
+    else if (window) return window;
+    else console.error('%c[react-blur-lazy-image]', 'font-weight:bold;', '\'container\' is not defined! please add image list after mounting the parent component, see: https://www.npmjs.com/package/react-blur-lazy-image');
     return false;
   }
 

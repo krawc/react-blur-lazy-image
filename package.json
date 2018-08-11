@@ -1,6 +1,6 @@
 {
   "name": "react-blur-lazy-image",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "lazy loading images in progressive way, loads image when its in user&#x27;s viewport",
   "author": "Rohit Sharma",
   "license": "WTFPL",
