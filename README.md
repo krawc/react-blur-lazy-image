@@ -2,7 +2,7 @@
 lazy loading images in progressive way, loads image when its in user's viewport
 
 ## Demo
-[http://rohitsharma.xyz/projects/react-blur-lazy-image/](http://rohitsharma.xyz/projects/react-blur-lazy-image/)
+[http://rohitsharma.xyz/cdn/projects/react-blur-lazy-image/index.html](http://rohitsharma.xyz/cdn/projects/react-blur-lazy-image/index.html)
 
 ## Features (1.x.x)
 * allow loading images only when the image is in user's viewport
